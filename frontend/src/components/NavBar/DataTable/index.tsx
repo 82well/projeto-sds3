@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Pagination from 'components/Pagination';
 import { useEffect, useState } from 'react';
 import { SalePage } from 'types/sale';
 import { formatLocalDate } from 'utils/format';
@@ -28,6 +29,8 @@ function DataTable() {
     }, []);
 
     return (
+        <>
+            <Pagination page={page} />
         <div className="table-responsive">
             <table className="table table-striped table-sm">
                 <thead>
@@ -56,6 +59,7 @@ function DataTable() {
                 </tbody>
             </table>
         </div>
+        </>
     );
 }
 
